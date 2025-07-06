@@ -1,5 +1,5 @@
 import { Locator, Page } from "playwright";
-import { UserData } from "../../models/users";
+import { createUser, UserData } from "../../models/users";
 
 export class RegisterForm {
     readonly firstNameInput: Locator;
@@ -29,16 +29,16 @@ export class RegisterForm {
     }
 
     async fillRegisterForm(user: UserData) {
-      this.firstNameInput.fill(user.firstname);
-      this.lastNameInput.fill(user.lastname);
-      this.addressInput.fill(user.address);
-      this.cityInput.fill(user.city);
-      this.stateInput.fill(user.state);
-      this.zipCodeInput.fill(user.zipCode);
-      this.phoneInput.fill(user.phone);
-      this.ssnInput.fill(user.ssn);
-      this.usernameInput.fill(user.username);
-      this.passwordInput.fill(user.password);
-      this.repeatedPasswordInput.fill(user.password);
+      await this.firstNameInput.fill(user.firstname);
+      await this.lastNameInput.fill(user.lastname);
+      await this.addressInput.fill(user.address);
+      await this.cityInput.fill(user.city);
+      await this.stateInput.fill(user.state);
+      await this.zipCodeInput.fill(user.zipCode);
+      await this.phoneInput.fill(user.phone);
+      await this.ssnInput.fill(user.ssn);
+      await this.usernameInput.fill(user.username);
+      await this.passwordInput.fill(user.password);
+      await this.repeatedPasswordInput.fill(user.password);
     }
 }

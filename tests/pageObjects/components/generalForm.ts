@@ -14,7 +14,7 @@ export class GeneralForm {
     constructor(page: Page) {
       this.leftPanel = page.locator('#leftPanel');
       this.rightPanel = page.locator('#rightPanel');
-      this.registerButton = page.getByText('Register');
+      this.registerButton = this.leftPanel.getByText('Register');
       this.loginButton = page.getByText('Log In ');
       this.logOutButton = page.getByText('Log Out');
       this.submitButton = this.rightPanel.getByText('Register');

@@ -6,7 +6,7 @@ export class Navigation {
 
     constructor(page: Page) {
         this.page = page;
-        this.registerButton = page.getByText('Send');
+        this.registerButton = page.getByText('Register');
     }
     
     async goto() {

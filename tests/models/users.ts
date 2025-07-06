@@ -32,18 +32,3 @@ export function createUser(): UserData {
     user.username = user.firstname.toLowerCase() + '.' + user.lastname.toLowerCase();
     return user;
 }
-/*
-
-
-export function createUser() : User {
-    const user = { 
-        firstname: faker.person.firstName(),
-        lastname: faker.person.lastName(),
-        email: '',
-        password: faker.internet.password(),
-        checkOption: faker.datatype.boolean(),
-        website: faker.internet.url()
-    }
-    user.email = user.firstname + '.' + user.lastname + '@yopmail.com';
-    return user;
-}*/
