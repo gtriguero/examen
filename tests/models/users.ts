@@ -29,7 +29,7 @@ export function createUser(): UserData {
         password: faker.internet.password()
     }
     // Y ahora vuelvo a llamarlo pero añadiéndole valores:    
-    user.username = user.firstname.toLowerCase() + '.' + user.lastname.toLowerCase() + '@yopmail.com';
+    user.username = user.firstname.toLowerCase() + '.' + user.lastname.toLowerCase();
     return user;
 }
 /*
