@@ -16,7 +16,6 @@ export class RegisterForm extends GeneralForm {
     readonly passwordInput: Locator;
     readonly repeatedPasswordInput: Locator;
     readonly titleRightPanel: Locator;
-   
 
     constructor(page: Page) {
       super(page);

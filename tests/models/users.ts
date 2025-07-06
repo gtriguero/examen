@@ -25,7 +25,7 @@ export function createUser(): UserData {
         phone: faker.phone.number(),
         ssn: Math.floor(Math.random()*8+1)+Math.random().toString().slice(2,10), // @MARCO, voy a ser honesto:
         // lo copié de internet y no acabo de entender cómo va... pero funciona.
-        username: '', // primero lo declaro vacío porque aún no tiene el firstname y lastname
+        username: '', // Primero lo declaro vacío porque aún no tiene el firstname y lastname
         password: faker.internet.password()
     }
     // Y ahora vuelvo a llamarlo pero añadiéndole valores:    

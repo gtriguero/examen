@@ -34,9 +34,4 @@ export class GeneralForm {
   async clickLogoutButton() {
     await this.logOutButton.click();
   }
-
-    async clickLoginButton() {
-    await this.loginButton.click();
-  }
-
 }
