@@ -1,7 +1,9 @@
 import { Locator, Page } from "playwright";
 import { UserData } from "../../models/users";
+import { GeneralForm } from "./generalForm";
 
-export class RegisterForm {
+export class RegisterForm extends GeneralForm {
+  // Extiendo la clase GeneralForm para reutilizar el this.rightPanel en línea 35
     readonly firstNameInput: Locator;
     readonly lastNameInput: Locator;
     readonly addressInput: Locator;
@@ -14,9 +16,10 @@ export class RegisterForm {
     readonly passwordInput: Locator;
     readonly repeatedPasswordInput: Locator;
     readonly titleRightPanel: Locator;
-    readonly rightPanel: Locator;
+   
 
     constructor(page: Page) {
+      super(page);
        this.firstNameInput = page.locator('[id="customer.firstName"]');
        this.lastNameInput = page.locator('[id="customer.lastName"]');
        this.addressInput = page.locator('[id="customer.address.street"]');
@@ -28,9 +31,7 @@ export class RegisterForm {
        this.usernameInput = page.locator('[id="customer.username"]');
        this.passwordInput = page.locator('[id="customer.password"]');
        this.repeatedPasswordInput = page.locator('[id="repeatedPassword"]');
-       this.rightPanel = page.locator('#rightPanel');//@MARCO no logré reusar el de registerForm.ts
-      // Sería interesante revisar cómo se puede hacer de forma correcta
-       this.titleRightPanel = page.locator('#rightPanel h1');
+       this.titleRightPanel = this.rightPanel.locator('h1');
     }
 
     async fillRegisterForm(user: UserData) {

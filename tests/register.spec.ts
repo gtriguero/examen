@@ -6,7 +6,7 @@ test.beforeEach(async ({ pageManager }) => {
 });
 
 test('register user', async ({ pageManager, user }) => {
-test.slow();
+  test.slow();
   await pageManager.onNavigation().navigateToRegister();
   await pageManager.onGeneralForm().clickRegisterButton();
   await pageManager.onRegisterComponent().fillRegisterForm(user);

@@ -15,7 +15,6 @@ export class Navigation {
     }
 
       async navigateToRegister() {
-     
         await this.page.waitForLoadState('load');
         await this.registerButton.click();
       }
