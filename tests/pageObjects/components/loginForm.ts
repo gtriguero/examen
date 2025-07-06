@@ -15,8 +15,8 @@ export class LoginForm {
     }
 
     async fillLoginForm(user: UserData) {
-      this.userName.fill(user.username);
-      this.password.fill(user.password);
-      this.submitButton.click();
+      await this.userName.fill(user.username);
+      await this.password.fill(user.password);
+      await this.submitButton.click();
     }
 }

@@ -5,8 +5,8 @@ export class Navigation {
     readonly registerButton: Locator;
 
     constructor(page: Page) {
-        this.page = page;
-        this.registerButton = page.getByText('Register');
+      this.page = page;
+      this.registerButton = page.locator('text=Register');
     }
     
     async goto() {
@@ -15,6 +15,7 @@ export class Navigation {
     }
 
       async navigateToRegister() {
+     
         await this.page.waitForLoadState('load');
         await this.registerButton.click();
       }

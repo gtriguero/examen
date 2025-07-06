@@ -6,9 +6,9 @@ export class PageManager {
 
 constructor(page: Page) {
         this.navigation = new Navigation(page);
-
     }
- onNavigation() {
+
+onNavigation() {
         return this.navigation;    
     }
 }

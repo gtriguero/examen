@@ -1,5 +1,5 @@
 import { Locator, Page } from "playwright";
-import { createUser, UserData } from "../../models/users";
+import { UserData } from "../../models/users";
 
 export class RegisterForm {
     readonly firstNameInput: Locator;
@@ -13,6 +13,8 @@ export class RegisterForm {
     readonly usernameInput: Locator;
     readonly passwordInput: Locator;
     readonly repeatedPasswordInput: Locator;
+    readonly titleRightPanel: Locator;
+    readonly rightPanel: Locator;
 
     constructor(page: Page) {
        this.firstNameInput = page.locator('[id="customer.firstName"]');
@@ -26,6 +28,9 @@ export class RegisterForm {
        this.usernameInput = page.locator('[id="customer.username"]');
        this.passwordInput = page.locator('[id="customer.password"]');
        this.repeatedPasswordInput = page.locator('[id="repeatedPassword"]');
+       this.rightPanel = page.locator('#rightPanel');//@MARCO no logré reusar el de registerForm.ts
+      // Sería interesante revisar cómo se puede hacer de forma correcta
+       this.titleRightPanel = page.locator('#rightPanel h1');
     }
 
     async fillRegisterForm(user: UserData) {
